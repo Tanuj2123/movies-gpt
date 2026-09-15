@@ -6,4 +6,6 @@
  - configure tailwind to integrate tailwind into you app
 
 
+# Sign In and Sign Up
+ - built Sign Up and Sign In used a single form for both pages
 
