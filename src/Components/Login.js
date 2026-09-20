@@ -5,6 +5,7 @@ import signUpUser from "../utils/signUpUser";
 import signInUser from "../utils/signInUser";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { BACKGROUND_IMAGE } from "../utils/constants";
 
 const Login = () => {
 
@@ -45,7 +46,7 @@ const Login = () => {
     <div className='relative'>
       <Header/>
       <div>
-        <img className="w-full h-full object-contain"src="https://assets.nflxext.com/ffe/siteui/vlv3/ae999ff9-5858-4638-b0f2-8abcf9fb6a08/web/IN-en-20260831-TRIFECTA-perspective_8fd44dcf-63ea-4547-8e1e-e5fc7e03883d_large.jpg" alt="bg-image"></img>
+        <img className="w-full h-full object-contain"src={BACKGROUND_IMAGE} alt="bg-image"></img>
       </div>
       <form onSubmit={(e)=> e.preventDefault()} className=" rounded-xl bg-black text-white flex flex-col items-center absolute top-32 left-[37rem] m-4 px-8 py-20 opacity-80">
         <h1 className="text-2xl">Sign {signIn===true?<span>In</span>:<span>Up</span>}</h1>

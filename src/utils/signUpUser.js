@@ -4,7 +4,7 @@ import { updateProfile } from "firebase/auth";
 import { addUser } from "./userSlice";
 
 
-function signUpUser(name,email,password,setErrorMessage,navigate,dispatch){
+function signUpUser(name,email,password,setErrorMessage,dispatch){
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -15,7 +15,6 @@ function signUpUser(name,email,password,setErrorMessage,navigate,dispatch){
             }).then(() => {
             // Profile updated!
                 dispatch(addUser({uid:user.uid,email:user.email,displayName:user.displayName}));
-                navigate("/browse");
             // ...
             }).catch((error) => {
             // An error occurred

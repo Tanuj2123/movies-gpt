@@ -2,12 +2,11 @@ import {auth} from "./firebase";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-function signInUser(email,password,setErrorMessage,navigate){
+function signInUser(email,password,setErrorMessage){
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    navigate("/browse");
     // ...
   })
   .catch((error) => {
