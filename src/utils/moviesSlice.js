@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ifNull } from "firebase/firestore/pipelines";
 
 const moviesSlice = createSlice({
     name:"movies",
     initialState:{
         nowPlayingMovies:null,
-        trailerVideo:null
+        trailerVideo:null,
+        popularMovies:null,
+        topRated:null,
+        upcomingMovies:null,
     },
     reducers:{
         addNowPlayingMovies: (state,action)=>{
@@ -13,9 +15,18 @@ const moviesSlice = createSlice({
         },
         addTrailerVideo: (state,action)=>{
             state.trailerVideo = action.payload
+        },
+        addPopularMovies:(state,action)=>{
+            state.popularMovies = action.payload
+        },
+        addTopRated:(state,action)=>{
+            state.topRated = action.payload
+        },
+        addUpcomingMovies:(state,action)=>{
+            state.upcomingMovies = action.payload
         }
     }
 })
 
-export const {addNowPlayingMovies,addTrailerVideo} = moviesSlice.actions;
+export const {addNowPlayingMovies,addTrailerVideo,addPopularMovies,addTopRated,addUpcomingMovies} = moviesSlice.actions;
 export default moviesSlice.reducer;
