@@ -8,7 +8,7 @@ const MainContainer = () => {
 
     if(!nowPlayingMovies) return;
 
-    const mainMovie = nowPlayingMovies[0];
+    const mainMovie = nowPlayingMovies[3];
     const {title,overview,id} = mainMovie;
   return (
     <div className="relative -z-40">
